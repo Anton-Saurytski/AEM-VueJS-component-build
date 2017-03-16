@@ -1,16 +1,14 @@
 <template>
   <div class="componentA">
-    <h1>{{text}}</h1>
+    <h1>{{node.text}}</h1>
   </div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      text: 'Component A'
-    }
-  }
+  props: [
+    'node'
+  ]
 }
 </script>
 
