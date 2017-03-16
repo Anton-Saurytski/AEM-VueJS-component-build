@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Rollup :: VueJS Component Compilation</title>
+    <!-- styles extracted from components -->
+    <link rel="stylesheet" href="root.css">
+    <link rel="stylesheet" href="a.css">
+    <link rel="stylesheet" href="b.css">
+     <!-- runtime only build of VueJS -->
+    <script src="https://unpkg.com/vue@2.2.4/dist/vue.runtime.min.js"></script>
+    <script>
+      var data = {
+        componentA: {
+          text: 'Component A Data'
+        },
+        componentB: {
+          text: 'Component B Data'
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- mounting divs are replaced entirely by component markup -->
+    <div id="root"></div>
+
+    <!-- compiled Vue components -->
+    <script src="a.js"></script>
+    <script src="b.js"></script>
+    <script src="root.js"></script>
+    <!-- mount root component to a DOM node -->
+    <script>var App = new Vue(componentRoot)</script>
+  </body>
+</html>
