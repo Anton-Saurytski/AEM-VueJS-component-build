@@ -1,12 +1,11 @@
 <template>
-  <div id="componentA">
+  <div class="componentA">
     <h1>{{text}}</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'A',
   data () {
     return {
       text: 'Component A'
@@ -16,7 +15,7 @@ export default {
 </script>
 
 <style>
-#componentA h1 {
+.componentA h1 {
   font-size: 40px;
   color: red;
 }
