@@ -8,16 +8,21 @@ function compileComponent(file){
 
   // get component name from file name (file: a.vue, name: a)
   var name = file.substring(0, file.lastIndexOf('.')).toLowerCase()
-  // each component needs a module name (preferably name spaced i.e aemVueComponent...)
-  var moduleName = 'component' + name.charAt(0).toUpperCase() + name.slice(1)
+  // each component needs a unique module name
+  var moduleName
+  if(name === 'page'){
+    moduleName = 'aemVue' + name.charAt(0).toUpperCase() + name.slice(1)
+  } else {
+    moduleName = 'component' + name.charAt(0).toUpperCase() + name.slice(1)
+  }
 
-  // compile the Vue component and give us a .js and .css for each
+  // compile the Vue component and give us a .js and .css
   rollup.rollup({
     entry: `src/${name}.vue`,
     plugins: [ 
       vue({
         compileTemplate: true,
-        css: `dist/${name}.css`
+        css: `./dist/${name}.css`
       }), 
       buble() 
     ]
