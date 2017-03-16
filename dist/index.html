@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Rollup :: VueJS Component Compilation</title>
     <!-- styles extracted from components -->
-    <link rel="stylesheet" href="root.css">
+    <link rel="stylesheet" href="page.css">
     <link rel="stylesheet" href="a.css">
     <link rel="stylesheet" href="b.css">
      <!-- runtime only build of VueJS -->
@@ -27,8 +27,8 @@
     <!-- compiled Vue components -->
     <script src="a.js"></script>
     <script src="b.js"></script>
-    <script src="root.js"></script>
-    <!-- mount root component to a DOM node -->
-    <script>var App = new Vue(componentRoot)</script>
+    <script src="page.js"></script>
+    <!-- mount root component (aemVuePage) to a DOM node (#root) -->
+    <script>var App = new Vue(aemVuePage)</script>
   </body>
 </html>
